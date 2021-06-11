@@ -1,10 +1,10 @@
-import useSelectTennant from "../hooks/useSelectTennant";
+import { useConfigContext } from "../context/configContext";
 import logo from '../assets/img/logo.svg';
 import '../assets/css/App.css';
 
 function App() {
-  const configToTennant = useSelectTennant();
-  import (`../assets/css/App-${configToTennant.tennantActive}.scss`);
+  const configToTennant = useConfigContext();
+  import(`../assets/css/App-${configToTennant.tennantActive}.scss`);
 
   return (
     <div className="App">
