@@ -1,10 +1,11 @@
 import { useConfigContext } from "../context/configContext";
 import logo from '../assets/img/logo.svg';
-import '../assets/css/App.css';
+import SelectTennant from "./globals/SelectTennant";
 
 function App() {
-  const configToTennant = useConfigContext();
-  import(`../assets/css/App-${configToTennant.tennantActive}.scss`);
+  const { configToTennant } = useConfigContext();
+  import(`../assets/${configToTennant.tennantActive}/css/index.scss`);
+  import(`../assets/${configToTennant.tennantActive}/css/App.scss`);
 
   return (
     <div className="App">
@@ -21,6 +22,9 @@ function App() {
         >
           Learn React
         </a>
+        {
+          process.env.NODE_ENV === 'development' && <SelectTennant />
+        }        
       </header>
     </div>
   );

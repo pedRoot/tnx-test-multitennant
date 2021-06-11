@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
-import './assets/css/index.css';
+
 import App from './components/App';
 import { ConfigProvider } from "./context/configContext";
 
