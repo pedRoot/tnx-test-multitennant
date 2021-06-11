@@ -3,14 +3,15 @@ import logo from '../assets/img/logo.svg';
 import '../assets/css/App.css';
 
 function App() {
-  const allConfig = useSelectTennant();
-  console.log('allConfig: ', allConfig);
+  const configToTennant = useSelectTennant();
+  import (`../assets/css/App-${configToTennant.tennantActive}.scss`);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {configToTennant.title}
         </p>
         <a
           className="App-link"
