@@ -1,7 +1,10 @@
+import useSelectTennant from "../hooks/useSelectTennant";
 import logo from '../assets/img/logo.svg';
 import '../assets/css/App.css';
 
 function App() {
+  const allConfig = useSelectTennant();
+  console.log('allConfig: ', allConfig);
   return (
     <div className="App">
       <header className="App-header">
