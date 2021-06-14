@@ -8,7 +8,7 @@ const cache = new LRU({ max: 10 });
 configure({ axios, cache });
 
 const getAll = () => {
-  return  apiWrapper.get(`${urlBase}`);
+  return apiWrapper.get(`${urlBase}`);
 }
 
 const getById = id => {
@@ -20,11 +20,23 @@ const create = (params) => {
 }
 
 const update = (id, params) => {
-  return apiWrapper.post(`${urlBase}/${id}`, params);  
+  return apiWrapper.post(`${urlBase}/${id}`, params);
 }
 
 const remove = id => {
   return apiWrapper.remove(`${urlBase}/${id}`);
+}
+
+const findUser = (users, value) => {
+  return users.filter(user =>{
+    const first_name = user.first_name;
+    const last_name = user.last_name;
+
+    const isFirstName = value.toUpperCase() === first_name.toUpperCase();
+    const isLastName = value.toUpperCase() === last_name.toUpperCase();
+    return (isFirstName || isLastName);
+    }
+  );
 }
 
 export const UserService = {
@@ -32,5 +44,6 @@ export const UserService = {
   getById,
   create,
   update,
-  delete: remove
+  delete: remove,
+  findUser
 }
