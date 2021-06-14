@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-
+import { BrowserRouter } from "react-router-dom";
 
 import App from './components/App';
 import { ConfigProvider } from "./context/configContext";
@@ -9,7 +9,9 @@ import { ConfigProvider } from "./context/configContext";
 ReactDOM.render(
   <React.StrictMode>
     <ConfigProvider>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ConfigProvider>
   </React.StrictMode>,
   document.getElementById('root')

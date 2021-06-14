@@ -1,4 +1,4 @@
-import configByTennant from "../configs";
+import configByTennant from "../settings";
 
 const useSelectTennant = (tennant = null) => {
   return {

@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import useSelectTennant from "../hooks/useSelectTennant";
-import configByTennant from "../configs";
+import configByTennant from "../settings";
 
 export const ConfigContext = createContext();
 
