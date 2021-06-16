@@ -59,7 +59,7 @@ const List = () => {
               type="button"
               onClick={getAllUsers}
             >
-              refresh
+              Refresh
             </button>
           </div>
         </div>

@@ -1,4 +1,4 @@
-const Add = () => {
+const Add = (props) => {
   return (
     <div>
       Vas a agregar datos???

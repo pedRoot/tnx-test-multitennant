@@ -8,10 +8,13 @@ export const ConfigProvider = ({ children }) => {
   const [configToTennant, setConfigToTennant] = useState(useSelectTennant());
 
   const handleChangeConfig = (tennant = null) => {
-    const getConfigByTennant = {
+    const tennantSelect = tennant || process.env.REACT_APP_TENNANT;
+      
+    let getConfigByTennant = {
       ...configByTennant['configBase'],
-      ...configByTennant[tennant || process.env.REACT_APP_TENNANT]
+      ...configByTennant[tennantSelect]
     };
+    getConfigByTennant.tennantActive = tennantSelect;
     setConfigToTennant(() => getConfigByTennant);
   }
 

@@ -1,8 +1,8 @@
 import { apiWrapper } from "../helpers/api-wrapper";
 import { configure } from "axios-hooks";
-import axios from "../config/axios";
 import LRU from "lru-cache";
 
+import axios from "../config/axios";
 const urlBase = `${process.env.REACT_APP_URL_API}users`;
 const cache = new LRU({ max: 10 });
 configure({ axios, cache });
